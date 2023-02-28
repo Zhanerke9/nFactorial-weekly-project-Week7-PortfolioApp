@@ -1,21 +1,15 @@
 import "./index.css";
-import { useRef } from "react";
 
 export default function Header() {
-    const ref = useRef(null);
-
-    const handleClick = () => {
-      ref.current?.scrollIntoView({behavior: 'smooth'});
-    };
 
   return (
     <header className="headerAll">
       <p className="header-title">Zhanerke</p>
       <div className="HeaderNav">
-        <button className="HeaderButtons" onClick={handleClick}>About</button>
-        <button className="HeaderButtons" onClick={handleClick}>Experience</button>
-        <button className="HeaderButtons" onClick={handleClick}>Projects</button>
-        <button className="HeaderButtons" onClick={handleClick}>Contacts</button>
+        <button className="HeaderButtons" onClick={() => window.location.replace("/#sectiton-about")}>About</button>
+        <button className="HeaderButtons" onClick={() => window.location.replace("/#sectiton-experience")}>Experience</button>
+        <button className="HeaderButtons" onClick={() => window.location.replace("/#sectiton-projects")}>Projects</button>
+        <button className="HeaderButtons" onClick={() => window.location.replace("/#sectiton-contact")}>Contacts</button>
       </div>
     </header>
   );

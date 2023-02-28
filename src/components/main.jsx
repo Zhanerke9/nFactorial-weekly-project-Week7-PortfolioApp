@@ -1,7 +1,11 @@
 import "./index.css";
 import photo from "../images/photoMain2.jpeg";
 import projectPhoto from "../images/react.png";
-import {AiOutlineMail, AiOutlineWhatsApp, AiOutlineLinkedin } from "react-icons/ai";
+import {
+  AiOutlineMail,
+  AiOutlineWhatsApp,
+  AiOutlineLinkedin,
+} from "react-icons/ai";
 
 const experience = [
   {
@@ -62,37 +66,51 @@ export default function Main(ref) {
         </div>
         <button
           onClick={(event) =>
-            (window.location.href =
-              "https://drive.google.com/file/d/1wf0z6lgAlcRaseKvQf_52E5HsfZ56TkL/view?usp=share_link")
+            window.open(
+              "https://drive.google.com/file/d/1wf0z6lgAlcRaseKvQf_52E5HsfZ56TkL/view?usp=share_link",
+              "_blank"
+            )
           }
         >
           Check out my CV
         </button>
       </div>
-      <div className="section2">
+
+      <div id="sectiton-about" className="section2">
         <div className="section2-About">
           <p className="section1-Header">About me</p>
-          <p className="texts-all">
-            I am on the way of career switch to software engineer.
-            <br /> Skills gained at nFactorial School:
-          </p>
-          <div className="About-details">
-            <ul className="listLeft">
-              <li className="texts-all">Basic Java</li>
-              <li className="texts-all">HTML, CSS, Javascript</li>
-            </ul>
-            <ul className="listRight">
-              <li className="texts-all">React JS</li>
-              <li className="texts-all">Frameworks: Bootstrap, Material UI</li>
-            </ul>
-          </div>
         </div>
-        <div className="image">
-          <img src={photo} alt="MyPhoto" style={{ width: 280, height: 360 }} />
+        <div className="section2-Part1">
+          <div className="section2-Part2">
+            <p className="texts-all">
+              I am on the way of career switch to software engineer.
+              <br /> Skills gained at nFactorial School:
+            </p>
+
+            <div className="About-details">
+              <ul className="listLeft">
+                <li className="texts-all">Basic Java</li>
+                <li className="texts-all">HTML, CSS, Javascript</li>
+              </ul>
+              <ul className="listRight">
+                <li className="texts-all">React JS</li>
+                <li className="texts-all">
+                  Frameworks: Bootstrap, Material UI
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="image">
+            <img
+              src={photo}
+              alt="MyPhoto"
+              style={{ width: 280, height: 360 }}
+            />
+          </div>
         </div>
       </div>
 
-      <div className="section3">
+      <div id="sectiton-experience" className="section3">
         <p className="section1-Header">Experience</p>
         {experience.map((item, index) => (
           <div className="experience-table" key={index}>
@@ -114,7 +132,7 @@ export default function Main(ref) {
         ))}
       </div>
 
-      <div className="section4">
+      <div id="sectiton-projects" className="section4">
         <p className="section1-Header">Projects I've Worked On</p>
         <div className="section4-all">
           <div className="image">
@@ -134,24 +152,35 @@ export default function Main(ref) {
         </div>
       </div>
 
-      <div className="section5">
+      <div id="sectiton-contact" className="section5">
         <div className="section1-Text">
           <p className="section1-Header">Say Hello!</p>
           <p className="texts-all">Feel free to reach me via:</p>
         </div>
         <div className="section5-buttons">
-          <button onClick={() => window.location = 'mailto:zhanerke.sauranbay@gmail.com'}>
-            <AiOutlineMail size={56}/>
+          <button
+            onClick={() =>
+              window.open("mailto:zhanerke.sauranbay@gmail.com", "_blank")
+            }
+          >
+            <AiOutlineMail size={56} />
           </button>
           <span>or </span>
           <button
-            onClick={(event) => (window.location.href = "//wa.me/+77473868976")}
+            onClick={(event) => window.open("//wa.me/+77473868976", "_blank")}
           >
-            <AiOutlineWhatsApp size={56}/>
+            <AiOutlineWhatsApp size={56} />
           </button>
           <span>or </span>
-          <button onClick={(event) => (window.location.href = "https://www.linkedin.com/in/zhanerke-sauranbay/")}>
-            <AiOutlineLinkedin size={56}/>
+          <button
+            onClick={(event) =>
+              window.open(
+                "https://www.linkedin.com/in/zhanerke-sauranbay/",
+                "_blank"
+              )
+            }
+          >
+            <AiOutlineLinkedin size={56} />
           </button>
         </div>
       </div>
